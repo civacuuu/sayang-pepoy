@@ -1,0 +1,32 @@
+* { box-sizing: border-box; margin:0; padding:0; }
+html, body {
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(circle at center, #0d0d0d, #000000 90%);
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* teks hujan */
+.falling {
+  position: absolute;
+  top: -10vh;
+  font-size: clamp(16px, 4vw, 32px);
+  font-weight: bold;
+  white-space: nowrap;
+  color: #00f5ff; /* neon cyan */
+  text-shadow: 
+    0 0 5px #00f5ff,
+    0 0 10px #00f5ff,
+    0 0 20px #00f5ff,
+    0 0 40px #00f5ff;
+  animation: fall linear forwards;
+  user-select: none;
+  pointer-events: none;
+}
+
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(110vh) rotate(20deg); opacity: 0; }
+}
